@@ -1,0 +1,11 @@
+<h2><b>Posts</b></h2>
+<!-- async permet de dire que la donnée que l'on souhaite affiché n'est pas disponible immediatement -->
+<!--<p>Mis à jour : {{ lastUpdate | async | date: 'short' | uppercase }}</p>-->
+<ul class="list-group">
+  <app-post-list-item-component  *ngFor="let post of listPosts"
+                                 [postTitre]="post.title"
+                                 [postContent]="post.content"
+                                 [postLoveIts]="post.loveIts"
+                                 [postCreatedDate]="post.created_at">
+  </app-post-list-item-component>
+</ul>

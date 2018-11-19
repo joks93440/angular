@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postLoveIts > 0,
+                'list-group-item-danger': postLoveIts < 0}">
+  <p class="pull-right" [ngStyle]="{color : 'grey'}"><i>{{ postCreatedDate | date : 'dd/MM/yyyy, hh:mm a' }}</i></p>
+  <h4 [ngStyle]="{color : getColor() }"><b>{{ postTitre }}</b></h4>
+  <p  [ngStyle]="{color : getColor() }">{{ postContent }}</p>
+  <div>
+    <button class="btn btn-success" (click)="[addLoveIts(1)]">Love It !</button>
+    <button class="btn btn-danger" (click)="[addLoveIts(-1)]">Don't Love It !</button>
+  </div>
+
+  <!--<div style="width:20px;height:20px;background-color:red;"
+       *ngIf="appareilStatus === 'éteint'"></div>
+  <div style="width:20px;height:20px;background-color:green;"
+       *ngIf="appareilStatus === 'allumé'"></div>
+  <h4 [ngStyle]="{color : getColor()}">Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="appareilName">
+  -->
+</li>
