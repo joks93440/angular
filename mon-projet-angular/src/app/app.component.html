@@ -1,16 +1,18 @@
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"><a routerLink="auth">Authentification</a></li>
+      <li routerLinkActive="active"><a routerLink="appareils">Appareils</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Posts</h2>
-      <!-- async permet de dire que la donnée que l'on souhaite affiché n'est pas disponible immediatement -->
-      <!--<p>Mis à jour : {{ lastUpdate | async | date: 'short' | uppercase }}</p>-->
-      <ul class="list-group">
-        <app-appareil  *ngFor="let appareil of appareils"
-                       [appareilName]="appareil.name"
-                       [appareilStatus]="appareil.status"></app-appareil>      </ul>
-      <button class="btn btn-success"
-              [disabled]="!isAuth"
-              (click)="onAllumer()">Tout allumer</button>
+      <router-outlet></router-outlet>
+
     </div>
   </div>
 </div>
